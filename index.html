@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sole Machina 🍕</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="index.css">
 </head>
 <body>
     <header>
@@ -21,32 +21,25 @@
     </header>
     <main>
         <h2>Welkom bij Sole Machina 🍕</h2>
-        <div class="login-box">
-            <div class="login-header">
-            </div>
-            <div class="input-box">
-                <input type="text" class="input-field" placeholder="Gebruikersnaam" autocomplete="off" required>
-            </div>
-            <div class="input-box">
-                <input type="password" class="input-field" placeholder="Wachtwoord" autocomplete="off" required>
-            </div>
-            <div class="forgot">
-                <section>
-                    <input type="checkbox" id="check">
-                    <label for="check">Onthoud mij</label>
-                </section>
-                <section>
-                    <a href="#">Wachtwoord vergeten</a>
-                </section>
-            </div>
-            <div class="input-submit">
-                <button class="submit-btn" id="submit"></button>
-                <label for="submit">Login</label>
-            </div>
-            <div class="sign-up-link">
-                <p>Nog geen account? <a href="#">Registreer hier</a></p>
-            </div>
-        </div>
+        <section class="login-container">
+            <h3>Login</h3>
+            <form method="POST">
+                <label for="username">Gebruikersnaam:</label>
+                <input type="text" id="username" name="username" required>
+        
+                <label for="password">Wachtwoord:</label>
+                <input type="password" id="password" name="password" required>
+        
+                <div class="remember-forgot">
+                    <label>
+                        <input type="checkbox" name="remember"> Onthoud mij
+                    </label>
+                    <a href="#" class="forgot-password">Wachtwoord vergeten?</a>
+                </div>
+        
+                <button type="submit">Inloggen</button>
+            </form>
+        </section>
     </main>
     <footer>
         <p>&copy; 2025 Webshop. Alle rechten voorbehouden.</p>

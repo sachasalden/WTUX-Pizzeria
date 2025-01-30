@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Winkelmandje</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="cart.css">
 </head>
 <body>
     <header>
@@ -15,7 +15,6 @@
                 <li><a href="index.html">Home</a></li>
                 <li><a href="menu.html">Menu</a></li>
                 <li><a href="profile.html">Profiel</a></li>
-                <li><a href="login.html">Login/Registratie</a></li>
                 <li><a href="orders.html">Bestellingoverzicht</a></li>
             </ul>
         </nav>
@@ -23,6 +22,51 @@
     <main>
         <h2>Jouw Winkelmandje</h2>
         <p>Bekijk en bevestig je bestelling.</p>
+
+        <div class="cart-container">
+            <table class="cart-table">
+                <thead>
+                    <tr>
+                        <th>Product</th>
+                        <th>Prijs</th>
+                        <th>Aantal</th>
+                        <th>Totaal</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Pizza Margherita</td>
+                        <td>€10,00</td>
+                        <td><input type="number" value="1" min="1"></td>
+                        <td>€10,00</td>
+                    </tr>
+                    <tr>
+                        <td>Pasta Carbonara</td>
+                        <td>€12,50</td>
+                        <td><input type="number" value="1" min="1"></td>
+                        <td>€12,50</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        
+        <div class="total">
+            <p><strong>Totaalbedrag: €22,50</strong></p>
+        </div>
+
+        <h3>Afleveradres</h3>
+        <form>
+            <label for="address">Straat en huisnummer:</label>
+            <input type="text" id="address" name="address" required>
+
+            <label for="postcode">Postcode:</label>
+            <input type="text" id="postcode" name="postcode" required>
+
+            <label for="city">Plaats:</label>
+            <input type="text" id="city" name="city" required>
+
+            <button type="submit">Bestelling plaatsen</button>
+        </form>
     </main>
     <footer>
         <p>&copy; 2025 Webshop. Alle rechten voorbehouden.</p>
