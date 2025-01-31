@@ -1,53 +1,91 @@
-
 body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
     background-color: #dddcdc;
     box-sizing: border-box;
+    display: flex; 
+    flex-direction: column; 
+    min-height: 100vh; 
 }
 
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
 
 header {
-    background-color: rgb(156, 2, 2);
+    background: url('https://source.unsplash.com/1600x900/?pizza') center/cover no-repeat, rgb(156, 2, 2);
     color: white;
-    padding: 15px 0;
+    padding: 20px;
     text-align: center;
-    width: 99%
+    width: 100%;
+    font-family: 'Pacifico', cursive;
+    font-size: 26px;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+    border-bottom: 4px solid #ffcc00;
+    position: relative;
 }
 
+header::after {
+    content: "Authentieke Italiaanse pizza's!";
+    display: block;
+    font-size: 14px;
+    font-weight: bold;
+    color: #ffcc00;
+    margin-top: 5px;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+footer {
+    background: url('https://source.unsplash.com/1600x900/?italian-restaurant') center/cover no-repeat, rgb(156, 2, 2);
+    color: white;
+    text-align: center;
+    padding: 15px;
+    font-size: 14px;
+    font-family: 'Pacifico', cursive;
+    border-top: 4px solid #ffcc00;
+    position: relative;
+    box-shadow: 0px -5px 10px rgba(0, 0, 0, 0.3);
+}
+
+footer::before {
+    content: "🍕 Buon Appetito! 🍕";
+    display: block;
+    font-size: 18px;
+    font-weight: bold;
+    color: #ffcc00;
+    margin-bottom: 5px;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+}
 
 nav ul {
-    list-style: none;
     padding: 0;
+    text-align: center;
 }
 
 nav ul li {
-    display: inline;
+    display: inline-block;
     margin: 0 15px;
 }
 
 nav ul li a {
     color: white;
-    text-decoration: none;
     font-weight: bold;
+    font-size: 18px;
+    text-decoration: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    transition: background 0.3s ease-in-out;
+}
+
+nav ul li a:hover {
+    background-color: #ffcc00;
+    color: rgb(156, 2, 2);
 }
 
 
 main {
+    flex: 1;
     padding: 20px;
     text-align: center;
-}
-
-
-footer {
-    background-color: rgb(156, 2, 2);
-    color: white;
-    text-align: center;
-    padding: 10px;
-    position: absolute;
-    width: 100%;
-    bottom: 0;
 }
 
 
@@ -113,6 +151,86 @@ button:hover {
     background-color: #218838;
 }
 
+.login-container {
+    background: white;
+    padding: 20px;
+    margin: 20px auto;
+    width: 100%;
+    max-width: 400px; 
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    text-align: center;
+}
+
+.login-container h3 {
+    margin-bottom: 15px;
+}
+
+.login-container label {
+    display: block;
+    margin: 10px 0 5px;
+    text-align: left;
+}
+
+.login-container input {
+    width: 100%; 
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    display: block;
+    box-sizing: border-box;
+}
+
+.remember-forgot {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 10px 0;
+    font-size: 14px;
+}
+
+.forgot-password {
+    text-decoration: none;
+    color: black;
+}
+
+.forgot-password:hover {
+    text-decoration: underline;
+}
+
+.employee-login {
+    text-decoration: none;
+    color: black;
+}
+
+.employee-login:hover {
+    text-decoration: underline;
+}
+
+button {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    cursor: pointer;
+    font-size: 16px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+button:hover {
+    background-color: #218838;
+}
+
+@media (max-width: 600px) {
+    .login-container {
+        width: 90%; 
+        margin: 10px auto;
+        padding: 15px; 
+    }
+}
+
 
 @media (max-width: 768px) {
 
@@ -169,4 +287,74 @@ button:hover {
         font-size: 16px;
         padding: 10px;
     }
+}
+
+
+table {
+    width: 90%;
+    max-width: 1000px; 
+    margin: 20px auto;
+    border-collapse: collapse;
+    background-color: white;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+table, th, td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: left;
+}
+
+th {
+    background-color: #555;
+    color: white;
+}
+
+.orders-table-container, .delivery-table-container {
+    margin-top: 20px;
+    overflow-x: auto; 
+}
+
+.orders-table, .delivery-table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: white;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+.orders-table th, .delivery-table th,
+.orders-table td, .delivery-table td {
+    border: 1px solid #ddd;
+    padding: 12px;
+    text-align: left;
+}
+
+.orders-table th, .delivery-table th {
+    background-color: #555;
+    color: white;
+}
+
+.orders-table td, .delivery-table td {
+    text-align: center;
+}
+
+.orders-table tr:nth-child(even), .delivery-table tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+.orders-table tr:hover, .delivery-table tr:hover {
+    background-color: #ddd;
+}
+
+.orders-table select, .delivery-table select {
+    padding: 5px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #fff;
+    cursor: pointer;
+}
+
+.orders-table select:focus, .delivery-table select:focus {
+    outline: none;
+    border-color: #555;
 }
